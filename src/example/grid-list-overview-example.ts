@@ -34,6 +34,8 @@ export class GridListOverviewExample {
   interestRate: string;
   loanAmount: string;
 
+  monthlyPaymentMessage: string = '';
+
   years: any[] = [
     { value: '10', viewValue: '10 Years' },
     { value: '20', viewValue: '20 Years' },
@@ -41,12 +43,14 @@ export class GridListOverviewExample {
   ];
 
   Calculate = () => {
-    this.http
-      .get<any>(
-        'https://mortagagecalculator.azurewebsites.net/api/GetMonthlyPayment?years=30&rate=5&principal=400000'
-      )
-      .subscribe((data) => {
-        console.log(data);
-      });
+    // this.http
+    //   .get<any>(
+    //     `https://mortagagecalculator.azurewebsites.net/api/GetMonthlyPayment?years=${this.selectedYearValue}&rate=${this.interestRate}&principal=${this.loanAmount}`
+    //   )
+    //   .subscribe((data) => {
+    //     //this.monthlyPaymentMessage = "Your Payment will be $" + data.monthlyPayment;
+    //     this.monthlyPaymentMessage = "Your Payment will be $222"
+    //   });
+      this.monthlyPaymentMessage = "It works";
   };
 }

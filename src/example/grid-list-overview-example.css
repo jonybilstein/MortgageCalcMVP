@@ -1,3 +1,9 @@
 mat-grid-tile {
   background: lightblue;
 }
+
+
+input[type="text"] {
+  background: transparent;
+  border: none;
+}
