@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, booleanAttribute } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -43,14 +43,32 @@ export class MortgageLoanCalculator {
   ];
 
   Calculate = () => {
-    // this.http
-    //   .get<any>(
-    //     `https://mortagagecalculator.azurewebsites.net/api/GetMonthlyPayment?years=${this.selectedYearValue}&rate=${this.interestRate}&principal=${this.loanAmount}`
-    //   )
-    //   .subscribe((data) => {
-    //     //this.monthlyPaymentMessage = "Your Payment will be $" + data.monthlyPayment;
-    //     this.monthlyPaymentMessage = "Your Payment will be $222"
-    //   });
-      this.monthlyPaymentMessage = "It works";
+     
+    this.monthlyPaymentMessage = "";
+    let lowerBounds: Boolean = false;
+    let upperBounds: Boolean = false;
+
+    
+    if (Number(this.loanAmount) > 0 && Number(this.interestRate) > 0 && Number(this.selectedYearValue) > 0 ) 
+    {
+      lowerBounds = true;
+    }
+
+    if (Number(this.loanAmount) <= 100000000000 && Number(this.interestRate) <= 1000 && Number(this.selectedYearValue) <= 30 ) 
+    {
+      upperBounds = true;
+    }
+
+    if (lowerBounds && upperBounds)
+    {
+      this.http
+      .get<any>(
+        `https://mortagagecalculator.azurewebsites.net/api/GetMonthlyPayment?years=${this.selectedYearValue}&rate=${this.interestRate}&principal=${this.loanAmount}`
+      )
+      .subscribe((data) => {
+        this.monthlyPaymentMessage = "Your Payment will be $" + Math.round(data.monthlyPayment); 
+      });
+    }
+      
   };
 }
