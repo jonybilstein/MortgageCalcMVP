@@ -5,7 +5,7 @@ import {provideHttpClient} from '@angular/common/http';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import {VERSION as CDK_VERSION} from '@angular/cdk';
 import {VERSION as MAT_VERSION, MatNativeDateModule} from '@angular/material/core';
-import {GridListOverviewExample} from './mortgage-calc/mortgage-calc';
+import {MortgageLoanCalculator} from './mortgage-calc/mortgage-calc';
 
 
 
@@ -13,7 +13,7 @@ import {GridListOverviewExample} from './mortgage-calc/mortgage-calc';
 console.info('Angular CDK version', CDK_VERSION.full);
 console.info('Angular Material version', MAT_VERSION.full);
 
-bootstrapApplication(GridListOverviewExample, {
+bootstrapApplication(MortgageLoanCalculator, {
   providers: [
     provideAnimations(),
     provideHttpClient(),

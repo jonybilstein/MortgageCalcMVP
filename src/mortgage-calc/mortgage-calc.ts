@@ -27,7 +27,7 @@ import { HttpClient} from '@angular/common/http';
     HttpClientModule,
   ],
 })
-export class GridListOverviewExample {
+export class MortgageLoanCalculator {
   constructor(private http: HttpClient) {}
 
   selectedYearValue: string;
