@@ -5,7 +5,7 @@ import {provideHttpClient} from '@angular/common/http';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import {VERSION as CDK_VERSION} from '@angular/cdk';
 import {VERSION as MAT_VERSION, MatNativeDateModule} from '@angular/material/core';
-import {GridListOverviewExample} from './example/grid-list-overview-example';
+import {GridListOverviewExample} from './mortgage-calc/mortgage-calc';
 
 
 
