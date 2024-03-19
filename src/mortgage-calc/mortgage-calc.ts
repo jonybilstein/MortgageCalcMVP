@@ -66,7 +66,10 @@ export class MortgageLoanCalculator {
         `https://mortagagecalculator.azurewebsites.net/api/GetMonthlyPayment?years=${this.selectedYearValue}&rate=${this.interestRate}&principal=${this.loanAmount}`
       )
       .subscribe((data) => {
-        this.monthlyPaymentMessage = "Your Payment will be $" + Math.round(data.monthlyPayment); 
+        var monthlyprice = data.monthlyPayment.toFixed(2);
+        this.monthlyPaymentMessage = "Your Payment will be " + monthlyprice;
+        
+        
       });
     }
       

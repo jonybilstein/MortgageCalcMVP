@@ -8,8 +8,7 @@ input[type="text"] {
 
 .center {
   margin: auto;
-  width: 50%;
-  padding: 10px;
+  width: 70%;
   text-align: center;
 
 }
@@ -17,4 +16,9 @@ input[type="text"] {
 .cellsize {
   height: 55px;
   padding: 20px 0;
+}
+
+#paymentInfo{
+  width: 100%;
+  text-align: center;
 }
